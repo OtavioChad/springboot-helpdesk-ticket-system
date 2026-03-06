@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Seguro</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<div class="login-container">
+    <form th:action="@{/logar}" method="post" class="login-box">
+        <h2>Login</h2>
+
+        <div th:if="${erro}" th:text="${erro}" class="error-message"></div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Digite seu email" required>
+        </div>
+
+        <div class="input-group">
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <button type="submit" >Entrar</button>
+
+        <p class="register-link">
+            Não tem conta? <a th:href="@{/cadastroUsuario}">Cadastrar</a>
+        </p>
+    </form>
+</div>
+
+</body>
+</html>
